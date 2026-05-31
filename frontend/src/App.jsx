@@ -130,7 +130,7 @@ export default function App() {
       if (data.type === "live_frame") {
         setActiveFrame(data.frame);
         setProcessingProgress(data.progress);
-        setIsProcessing(data.progress < 100.0);
+        setIsProcessing(data.video_id !== null && data.progress < 100.0);
         
         if (data.metrics) setMetrics(data.metrics);
         if (data.funnel) setFunnel(data.funnel);
