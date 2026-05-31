@@ -10,9 +10,12 @@ import {
 } from 'recharts';
 
 const STORE_ID = "STORE_BLR_002";
+const VITE_API_URL = import.meta.env.VITE_API_URL;
+const VITE_WS_URL = import.meta.env.VITE_WS_URL;
+
 const HOST_IP = typeof window !== 'undefined' ? window.location.hostname : 'localhost';
-const API_BASE_URL = `http://${HOST_IP}:8000`;
-const WEBSOCKET_URL = `ws://${HOST_IP}:8000/ws/stream/${STORE_ID}`;
+const API_BASE_URL = VITE_API_URL || `http://${HOST_IP}:8000`;
+const WEBSOCKET_URL = VITE_WS_URL || `ws://${HOST_IP}:8000/ws/stream/${STORE_ID}`;
 
 export default function App() {
   // Analytical stats state
